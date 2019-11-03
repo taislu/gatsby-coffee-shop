@@ -21,7 +21,7 @@ export default class Navbar extends Component {
     ]
   };
 
-  navbarHandler = () => {
+  navbarHandler = () => { // navbar-toggler button
     this.state.navbarOpen
       ? this.setState({ navbarOpen: false, css: "collapse navbar-collapse" })
       : this.setState({
@@ -39,6 +39,7 @@ export default class Navbar extends Component {
               Creative Commons (Attribution 3.0 Unported);
               https://www.iconfinder.com/webalys */}
         </Link>
+
         <button
           className="navbar-toggler"
           type="button"
@@ -46,6 +47,7 @@ export default class Navbar extends Component {
         >
           <span className="navbar-toggler-icon" />
         </button>
+
         <div className={this.state.css}>
           <ul className="navbar-nav mx-auto">
             {this.state.links.map(link => {
@@ -57,7 +59,7 @@ export default class Navbar extends Component {
                 </li>
               );
             })}
-            <li className="nav-item ml-sm-5">
+            <li className="nav-item ml-sm-5"> {/* margin left */}
               <FaCartArrowDown className="cart-icon snipcart-checkout" />
             </li>
           </ul>

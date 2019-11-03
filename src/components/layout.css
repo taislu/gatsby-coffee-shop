@@ -4,6 +4,7 @@
   --mainGrey: #ece8dc;
   --mainWhite: #fff;
   --mainDark: #222;
+  --mainLimeGreen: #32cd32;
 }
 
 body {
@@ -25,7 +26,7 @@ h6 {
 }
 .cart-icon {
   cursor: pointer;
-  color: var(--mainYellow);
+  color: var(--mainLimeGreen);
   font-size: 2rem;
 }
 .default-background,

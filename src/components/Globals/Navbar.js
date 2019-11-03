@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
-import logo from "../../images/logo.svg";
+import logo from "../../images/logo_java.svg";
 import { FaCartArrowDown } from "react-icons/fa";
 
 export default class Navbar extends Component {
   state = {
-    navbarOpen: false,
-    css: "collapse navbar-collapse ",
+    navbarOpen: false, // used for toggle button
+    css: "collapse navbar-collapse ", // bootstrap classes
     links: [
       {
         id: 1,
@@ -20,6 +20,7 @@ export default class Navbar extends Component {
       }
     ]
   };
+
   navbarHandler = () => {
     this.state.navbarOpen
       ? this.setState({ navbarOpen: false, css: "collapse navbar-collapse" })
@@ -28,14 +29,15 @@ export default class Navbar extends Component {
           css: "collapse navbar-collapse show"
         });
   };
+
   render() {
     return (
-      <nav className="navbar navbar-expand-sm bg-light navbar-light">
+      <nav className="navbar navbar-expand-sm bg-light navbar-light"> {/* bootstrap */}
         <Link to="/" className="navbar-brand">
-          <img src={logo} alt="logo" />
-          {/* https://www.iconfinder.com/icons/185113/coffee_streamline_icon
-Creative Commons (Attribution 3.0 Unported);
-https://www.iconfinder.com/webalys */}
+          <img style={{width:48}} src={logo} alt="logo" />
+             {/* https://www.iconfinder.com/icons/185113/coffee_streamline_icon
+              Creative Commons (Attribution 3.0 Unported);
+              https://www.iconfinder.com/webalys */}
         </Link>
         <button
           className="navbar-toggler"

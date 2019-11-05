@@ -18,27 +18,28 @@ const IndexPage = ({ data }) => (
     />
     
     <Info />
-    {/*
+    
     <Menu items={data.menu} />
+    {/*
     <Products />
     */}
     <Contact />
   </Layout>
 );
-
+/*
 export const query = graphql`
   {
     img: file(relativePath: { eq: "default-background.jpeg" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
   }
 `;
+*/
 
-/*
 export const query = graphql`
   {
     img: file(relativePath: { eq: "default-background.jpeg" }) {
@@ -68,6 +69,5 @@ export const query = graphql`
     }
   }
 `;
-*/
 
 export default IndexPage;

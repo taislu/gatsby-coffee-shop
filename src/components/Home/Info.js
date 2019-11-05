@@ -16,6 +16,7 @@ export default function Info() {
               necessitatibus nemo? Dignissimos quis iure accusamus beatae modi,
               autem expedita mollitia enim nobis laborum eos voluptatum.
             </p>
+            
             <Link to="/about/">
               <button className="btn text-uppercase btn-yellow">
                 about page

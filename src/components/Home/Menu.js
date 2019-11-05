@@ -11,6 +11,7 @@ const getCategories = items => {
   categories = ["all", ...categories];
   return categories;
 };
+
 export default class Menu extends Component {
   constructor(props) {
     super(props);

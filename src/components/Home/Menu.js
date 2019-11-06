@@ -3,37 +3,43 @@ import Title from "../Globals/Title";
 import Img from "gatsby-image";
 
 const getCategories = items => {
-  let tempItems = items.map(items => {
+  let tempItems = items.map(items => { // populate all categories into an array
     return items.node.category;
   });
-  let tempCategories = new Set(tempItems);
+  let tempCategories = new Set(tempItems); // filter out duplicate categories into set {}
   let categories = Array.from(tempCategories);
   categories = ["all", ...categories];
+
   return categories;
 };
 
 export default class Menu extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      items: props.items.edges,
-      coffeeItems: props.items.edges,
+      items: props.items.edges, // used for all categories
+      coffeeItems: props.items.edges, // used for filtered category
       categories: getCategories(props.items.edges)
     };
   }
+
   handleItems = category => {
     let tempItems = [...this.state.items];
+
     if (category === "all") {
       this.setState(() => {
         return { coffeeItems: tempItems };
       });
     } else {
+
       let items = tempItems.filter(({ node }) => node.category === category);
       this.setState(() => {
         return { coffeeItems: items };
       });
     }
   };
+
   render() {
     if (this.state.items.length > 0) {
       return (
@@ -41,7 +47,7 @@ export default class Menu extends Component {
           <div className="container">
             <Title title="best of our menu" />
             {/* categories */}
-            <div className="row mb-5">
+            <div className="row mb-5"> {/* margin-bottom-5 */}
               <div className="col-10 mx-auto text-center">
                 {this.state.categories.map((category, index) => {
                   return (
@@ -62,7 +68,8 @@ export default class Menu extends Component {
             {/* items */}
             <div className="row ">
               {this.state.coffeeItems.map(({ node }) => {
-                return (
+          
+                return ( 
                   <div
                     key={node.id}
                     className="col-11 col-md-6 my-3 d-flex mx-auto"

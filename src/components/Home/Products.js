@@ -3,7 +3,6 @@ import Product from "./Product";
 import Title from "../Globals/Title";
 import { StaticQuery, graphql } from "gatsby";
 
-/*
 const getProducts = graphql`
   {
     products: allContentfulCoffeeProduct {
@@ -25,6 +24,7 @@ const getProducts = graphql`
 `;
 
 export default function Products() {
+  // StaticQuery has two props : query, render
   return (
     <StaticQuery
       query={getProducts}
@@ -47,4 +47,4 @@ export default function Products() {
     />
   );
 }
-*/
+
